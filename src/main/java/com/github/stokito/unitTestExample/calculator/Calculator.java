@@ -7,7 +7,7 @@ public class Calculator {
 	}
 
 	public int minus(int a, int b) {
-		return a + b;  // ERROR!!!
+		return a - b;  // ERROR!!!
 	}
 
 	public int divide(int a, int b) {
@@ -16,6 +16,11 @@ public class Calculator {
 
 	public int multiply(int a, int b) {
 		return a * b;
+	}
+
+	public static void main(String[] args) {
+		Calculator calculator = new Calculator();
+		System.out.println(calculator.divide(6, 0));
 	}
 
 }

@@ -6,32 +6,39 @@ import org.junit.Test;
 public class CalculatorTest {
 
 	@Test
-	public void testSum() {
-		// Given
+	public void testSuma() {
 		Calculator calculator = new Calculator();
-		// When
 		int result = calculator.sum(2, 2);
-		// Then
-		if (result != 4) {   // if 2 + 2 != 4
+		if (result != 4) {   // si 2 + 2 != 4
 			Assert.fail();
 		}
 	}
 
 	@Test
-	public void testMinus() {
+	public void testResta() {
 		Calculator calculator = new Calculator();
-		Assert.assertEquals(0, calculator.minus(2, 2));
+		Assert.assertEquals(0, calculator.minus(2, 2)); // si 2 - 2 != 0
 	}
 
 	@Test
-	public void testDivide() {
+	public void testDividir() {
 		Calculator calculator = new Calculator();
 		Assert.assertEquals(2, calculator.divide(6, 3));
 	}
 
+	/**
+	 * Division por cero
+	 */
 	@Test(expected = ArithmeticException.class)
-	public void testDivideWillThrowExceptionWhenDivideOnZero() {
+	public void testDividirConThrowException() {
 		Calculator calculator = new Calculator();
-		calculator.divide(6, 0);
+		int divide = calculator.divide(10, 0);
+		Assert.fail("No deberia llegar a este punto");
+	}
+
+	@Test
+	public void testMultiplicar() {
+		Calculator calculator = new Calculator();
+		Assert.assertEquals(6, calculator.multiply(2, 3));
 	}
 }
